@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>biot</artifactId>
+        <groupId>org.biot</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>message-router</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>message-router-biz</module>
+        <module>message-router-infrastructure</module>
+        <module>message-router-starter</module>
+    </modules>
+
+    <properties>
+        <biot-dependencies.version>0.0.1-SNAPSHOT</biot-dependencies.version>
+        <biot-things-core.version>0.0.1-SNAPSHOT</biot-things-core.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SelfProject dependency -->
+            <dependency>
+                <groupId>org.biot</groupId>
+                <artifactId>message-router-biz</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.biot</groupId>
+                <artifactId>message-router-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Biot dependency-->
+            <dependency>
+                <groupId>org.biot</groupId>
+                <artifactId>common-dependency</artifactId>
+                <version>${biot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.biot</groupId>
+                <artifactId>things-core-client</artifactId>
+                <version>${biot-things-core.version}</version>
+            </dependency>
+
+            <!-- Third dependency -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.12.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>1.5.1.Final</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

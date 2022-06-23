@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.biot.message.router.infrastructure.dal.mapper.SubscribeMapper" >
+    <resultMap id="BaseResultMap" type="org.biot.message.router.infrastructure.dal.model.SubscribeDo" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="tenant_id" property="tenantId" jdbcType="VARCHAR" />
+        <result column="uuid" property="uuid" jdbcType="VARCHAR" />
+        <result column="product_ids" property="productIds" jdbcType="VARCHAR" />
+        <result column="message_types" property="messageTypes" jdbcType="VARCHAR" />
+        <result column="description" property="desc" jdbcType="VARCHAR" />
+        <result column="destination_id" property="destinationId" jdbcType="VARCHAR" />
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, tenant_id, uuid, product_ids, message_types, description, destination_id, gmt_create, gmt_modified
+    </sql>
+
+    <select id="selectByTenant" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from subscribe
+        where tenant_id = #{tenantId,jdbcType=VARCHAR}
+    </select>
+</mapper>
