@@ -10,7 +10,7 @@ import org.biot.message.BiotMessageType;
  */
 @Data
 @AllArgsConstructor
-public class Rule {
+class Rule {
     private String productId;
     private String messageType;
 
