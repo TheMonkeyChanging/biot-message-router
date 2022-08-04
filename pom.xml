@@ -5,12 +5,12 @@
     <parent>
         <artifactId>biot</artifactId>
         <groupId>org.biot</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>message-router</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -20,8 +20,8 @@
     </modules>
 
     <properties>
-        <biot-dependencies.version>0.0.1-SNAPSHOT</biot-dependencies.version>
-        <biot-things-core.version>0.0.1-SNAPSHOT</biot-things-core.version>
+        <biot-dependencies.version>0.0.1</biot-dependencies.version>
+        <biot-things-core.version>0.0.1</biot-things-core.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
